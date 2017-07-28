@@ -75,4 +75,58 @@ var findNonZero = (array) => {
 }
 */
 
+
+
 console.log(findNonZero([ 1, 0, 2, 0, 0, 3, 4, 5 ]));
+
+
+
+
+
+const findNonZero = (array) => {
+  // we want to have two pointers at the front and end of the array.
+  let backCount = array.length - 1;
+  let count = 0;
+  
+  for(let i = 0; i < array.length; i++) {
+    // if array[i] is a non-zero element, we want to leave it as is (since it is already at the front) and increment our count
+    if (array[i] !== 0) {
+      count++;
+    } else {
+      // else if array[i] is a zero then we know we want to move it to the back
+      // we want to do a swap only if the array[backCount] is a non zero element
+        // once found, we initiate the swap.
+      if (array[backCount] === 0) {
+        while(array[backCount] === 0) { // we want to find the first non zero element iterating backwards
+        
+        // we added this if/else statement to stop unnecessary swaps after the array is sorted
+          if (backCount > i) { // stop if the pointer equal or pass each other
+            backCount--;
+          } else { // break out of our for loop
+            i = array.length;
+            break;
+          }
+        }
+        if (backCount > i) { // Once we found our first non-zero element, we want to initiate our swap only and increment our count only if the pointers did not pass each other
+         swapHelper(array, i, backCount);
+         count++;
+        }
+      } else { // if array[backCount] is already a non zero element, then proceed with the swap and increment our count
+        swapHelper(array, i, backCount);
+        count++;
+      }
+    }
+    
+  }
+  // return our count of non-zero elements
+  return count;
+}
+
+// helper function for the swap
+const swapHelper = (array, i, j) => {
+  let temp = array[j];
+  array[j] = array[i];
+  array[i] = temp;
+}
+
+console.log(findNonZero([ 1, 0, 2, 0, 0, 3, 4, 0, 1, 0, 1, 9 ,10 ]));
