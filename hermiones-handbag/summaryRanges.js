@@ -26,7 +26,7 @@ const summaryRanges = (array) => {
       start = array[i];
     }
 
-    if (!array[i + 1]) {
+    if (!array[i + 1]) { 
       if (start === array[i]) {
         results.push(start.toString());
       } else {
@@ -40,3 +40,6 @@ const summaryRanges = (array) => {
 }
 
 console.log(summaryRanges([0,1,2,4,5,7, 8, 9, 11]))
+console.log([1]);
+console.log([1, 2]);
+console.log([1, 3]);
