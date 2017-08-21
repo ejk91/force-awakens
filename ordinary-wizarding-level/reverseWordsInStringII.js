@@ -16,7 +16,7 @@ E:
 */
 
 
-const reverseWords = (string) => {
+const reverse = (string) => {
   // swap first char and last char etc
 
   let result = string.split(' ');
@@ -31,7 +31,7 @@ const reverseWords = (string) => {
     end--;
   }
 
-  return result.join(' ');
+  return result.join(' ', ',');
 
 }
 
