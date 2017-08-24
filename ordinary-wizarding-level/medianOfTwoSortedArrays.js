@@ -3,7 +3,6 @@ const findMedianSortedArrays = (arr1, arr2) => {
   let oddMedian;
   let evenMedian;
 
-  console.log(length)
 
   if (length % 2) { // if it is an odd number
     oddMedian = Math.floor(length/2);
@@ -49,4 +48,3 @@ const mergeArrayUntil = (arr1, arr2, index) => {
 let nums1 = []
 let nums2 = [1]
 console.log(findMedianSortedArrays(nums1, nums2));
-console.log(undefined + 1);
