@@ -1,4 +1,4 @@
-class LinkedList {
+module.exports = class LinkedList {
   constructor(value) {
     let node = this.createNode(value)
     this.list = node,
@@ -44,12 +44,6 @@ class LinkedList {
   }
 }
 
-
-let list = new LinkedList('enoch');
-list.addTail('sara');
-list.addHead('Dale');
-
-console.log(list.head)
 
 
 
