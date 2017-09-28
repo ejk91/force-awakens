@@ -63,6 +63,3 @@ console.log('rand', obj.getRandom());
 
 
 console.log(obj.storage)
-
-
-
