@@ -8,7 +8,7 @@ const intervalSum = (numbers, i, j) => {
   let map = {};
   map[0] = 0;
 
-  for (let k = 0; k <= numbers.length; k++) {
+  for (let k = 0; k < numbers.length; k++) {
     map[k + 1] = numbers[k] + map[k];
   }
 
@@ -21,4 +21,4 @@ const intervalSum = (numbers, i, j) => {
 
 
 let numbers = [3, 4, 2, 1, 2, -1, 4, 3]
-console.log(intervalSum(numbers, 4, 7))
+console.log(intervalSum(numbers, 3, 7))
